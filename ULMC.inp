@@ -1,5 +1,5 @@
 TITLE:  ULMC (unmeasured latent method construct) model (Section 4.1);
-DATA:  FILE IS data.dat;
+DATA:  FILE IS  Data.csv;
 VARIABLE:
   NAMES ARE id gender grade major hukou onlychild cadre class
             ps1-ps16 pcj1-pcj20 ts1-ts17 si1-si15 se1-se18;
