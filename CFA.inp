@@ -1,0 +1,20 @@
+TITLE:  five-factor CFA of the measurement model (Section 4.1);
+DATA:  FILE IS WA227_data.dat;   ! space- or tab-delimited, 99 = missing
+VARIABLE:
+  NAMES ARE id gender grade major hukou onlychild cadre class
+            ps1-ps16 pcj1-pcj20 ts1-ts17 si1-si15 se1-se18;
+  USEVARIABLES ARE ps1-ps16 pcj1-pcj20 ts1-ts17 si1-si15 se1-se18;
+  MISSING ARE ALL (99);
+ANALYSIS:
+  ESTIMATOR = ML;
+MODEL:
+  ps  BY ps1-ps16*;
+  pcj BY pcj1-pcj20*;
+  ts  BY ts1-ts17*;
+  si  BY si1-si15*;
+  se  BY se1-se18*;
+  ps@1 pcj@1 ts@1 si@1 se@1;    ! latent variances fixed to 1 for StdYX
+OUTPUT: STDYX MOD(4) RESIDUAL;
+! Reported fit (Section 4.1): chi2/df = 1.92, CFI = .93, TLI = .92,
+! RMSEA = .06, SRMR = .05; standardized loadings > .50; AVE .51-.64;
+! CR .83-.92; HTMT .48-.79 .
