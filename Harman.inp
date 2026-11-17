@@ -1,5 +1,5 @@
 TITLE:  one-factor (Harman) model for common method bias (Section 4.1);
-DATA:  FILE IS WA227_data.dat;
+DATA:  FILE IS data.dat;
 VARIABLE:
   NAMES ARE id gender grade major hukou onlychild cadre class
             ps1-ps16 pcj1-pcj20 ts1-ts17 si1-si15 se1-se18;
